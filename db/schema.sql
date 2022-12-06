@@ -1,14 +1,17 @@
-DROP DATABASE IF EXISTS employees_db;
-CREATE DATABASE employees_db;
+--creating employee_tracker database--
+DROP DATABASE IF EXISTS employee_tracker_db;
+CREATE DATABASE employee_tracker_db;
 
 USE employees_db;
 
+--department table schema--
 CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT,
   department_name VARCHAR(30) NOT NULL,
   PRIMARY KEY (id) NOT NULL
 );
 
+--role schema-
 CREATE TABLE role (
     id INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(30) NOT NULL,
@@ -18,6 +21,7 @@ CREATE TABLE role (
         REFERENCES department(id)
 );
 
+--employee schema--
 CREATE TABLE employee (
     id INT NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(30) NOT NULL,
