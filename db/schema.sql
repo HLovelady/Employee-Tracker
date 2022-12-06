@@ -12,7 +12,7 @@ CREATE TABLE department (
 );
 
 --role schema-
-CREATE TABLE role (
+CREATE TABLE roles (
     id INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(30) NOT NULL,
     salary DECIMAL (99,2),
@@ -29,7 +29,7 @@ CREATE TABLE employee (
     manager_id INT,
     role_id INT,
     PRIMARY KEY (id)
-        FOREIGN KEY (role_id) REFERENCES role(id)
+        FOREIGN KEY (role_id) REFERENCES roles(id)
         FOREIGN KEY (manager_id) REFERENCES employee(id)
     ON DELETE SET NULL
 );
